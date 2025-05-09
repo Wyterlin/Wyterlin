@@ -12,24 +12,15 @@ Estou sempre em busca de novos desafios e oportunidades para aplicar minhas habi
 
 ---
 
-## 📊 Estatísticas  
+## 🧑🏻‍💻 LPs Dominantes
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Wyterlin&show_icons=true&theme=dracula&locale=pt-br&hide_border=true" height="150" alt="Estatísticas do GitHub" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Wyterlin&layout=compact&theme=dracula&hide_border=true" height="150" alt="Linguagens Mais Utilizadas" />
-</div>
-
----
-
-## 🛠 Tecnologias que Utilizo  
-
-<div align="left">
   <img src="https://skillicons.dev/icons?i=js,py,react,html,css,mysql" height="40" alt="Tecnologias" />
 </div>
 
 ---
 
-## 🧰 Ferramentas  
+## 🛠 Ferramentas  
 
 <div align="center">
   <img src="https://skillicons.dev/icons?i=github,git,vscode,postman" height="40" alt="Ferramentas" />
@@ -37,13 +28,34 @@ Estou sempre em busca de novos desafios e oportunidades para aplicar minhas habi
 
 ---
 
-## 🌐 Contato  
+## 🧊 Contribuições em 3D
+![Status](./profile-3d-contrib/profile-night-green.svg)
 
-<div align="left">
-  Se tiver interesse em me contactar, pode me encontrar através das seguintes plataformas:  
+---
+
+## 🔥 Contribuições Diárias
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=Wyterlin&theme=dracula&hide_border=true" alt="Contribuição contínua" />
 </div>
 
-<div align="right">
+---
+
+## 🏆 Troféus do GitHub
+[![Trophy](https://github-profile-trophy.vercel.app/?username=Wyterlin&theme=dracula&margin-w=10&no-frame=true)](https://github.com/ryo-ma/github-profile-trophy)
+
+---
+
+## 📊 Estatísticas do GitHub
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Wyterlin&show_icons=true&theme=dracula&locale=pt-br&hide_border=true" height="150" alt="Estatísticas do GitHub" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Wyterlin&layout=compact&theme=dracula&hide_border=true" height="150" alt="Linguagens Mais Utilizadas" />
+</div>
+
+---
+
+## 🌐 Entre em Contato  
+
+<div align="center">
   <a href="https://wa.me/qr/HZGTFLKYSU6GP1" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/whatsapp/default.svg" width="42" height="30" alt="WhatsApp" />
   </a>
@@ -68,5 +80,3 @@ Estou sempre em busca de novos desafios e oportunidades para aplicar minhas habi
 <img src="https://profile-readme-generator.com/assets/snake.svg" alt="Snake animation" width="100%" />
 
 ---
-
-Espero que possamos trocar conhecimentos e colaborar em projetos incríveis.🚀
