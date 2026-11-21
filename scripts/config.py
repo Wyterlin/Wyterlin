@@ -49,7 +49,7 @@ FONT_MONO = "'JetBrains Mono','Cascadia Code',Consolas,'SFMono-Regular',Menlo,'C
 # ── Card neofetch ───────────────────────────────────────────────────────────
 # (chave, valor). Valor pode ser lista => vira linhas extras alinhadas.
 INFO_ROWS = [
-    ("Cargo", "Analista de TI @ FastDrywall"),
+    ("Cargo", "Analista de TI"),
     ("Cert", "Consultor SAP Business One · Ramo"),
     ("Core", "SAP B1 on HANA"),
     ("Faço", ["TransactionNotification · PostTransaction",
