@@ -37,6 +37,10 @@ STATIC = os.environ.get("STATIC") == "1"
 
 def to_ascii(path: str):
     img = Image.open(path).convert("L")
+    # Resíduo do recorte de fundo (pixels quase pretos) virava "- = :" acima da
+    # cabeça. Abaixo do limiar = fundo = espaço.
+    floor = int(os.environ.get("ASCII_FLOOR", 45))
+    img = img.point(lambda v: 0 if v < floor else v)
     w, h = img.size
     rows = max(1, int(COLS * (h / w) * (CHAR_W / CHAR_H)))
     small = np.asarray(img.resize((COLS, rows), Image.LANCZOS), dtype=np.float32) / 255.0
@@ -84,7 +88,7 @@ def render(lines):
         f'<path d="M.5 10.5a10 10 0 0 1 10-10h{W - 21}a10 10 0 0 1 10 10V{BAR}H.5z" fill="{t["titlebar"]}"/>',
         f'<circle cx="18" cy="15" r="5" fill="#ff5f57"/><circle cx="34" cy="15" r="5" fill="#febc2e"/><circle cx="50" cy="15" r="5" fill="#28c840"/>',
         f'<text x="{W / 2}" y="19" text-anchor="middle" font-family="{config.FONT_MONO}" font-size="11" fill="{t["muted"]}">~/portrait.txt</text>',
-        f'<g font-family="{config.FONT_MONO}" font-size="11.5" fill="{t["ascii"]}" xml:space="preserve">',
+        f'<g font-family="{config.FONT_MONO}" font-size="11.5" fill="{t["ascii"]}" xml:space="preserve" style="white-space:pre">',
     ]
     last_end = 0.0
     for i, line in enumerate(lines):
@@ -93,8 +97,12 @@ def render(lines):
         y = top + (i + 1) * CHAR_H - 3
         lw = len(line) * CHAR_W
         clip = "" if STATIC else f' clip-path="url(#r{i})"'
+        # Espaços viram NBSP (U+00A0): Chrome/GitHub colapsam espaços comuns em
+        # SVG apesar de xml:space, a linha perde o recuo e o textLength a estica.
+        # Com NBSP cada coluna ocupa exatamente uma célula em qualquer navegador.
+        txt = escape(line).replace(" ", "\u00a0")
         out.append(
-            f'<text x="{PAD}" y="{y:.1f}" textLength="{lw:.1f}" lengthAdjust="spacingAndGlyphs"{clip}>{escape(line)}</text>'
+            f'<text x="{PAD}" y="{y:.1f}" textLength="{lw:.1f}" lengthAdjust="spacingAndGlyphs"{clip}>{txt}</text>'
         )
         if not STATIC:
             begin = i * ROW_STAGGER
