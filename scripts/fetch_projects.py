@@ -26,6 +26,31 @@ API = "https://api.github.com"
 TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
 WEEKS = 12
 
+# O Linguist classifica SQL como linguagem "data" e o exclui de /languages, então
+# um repo de queries aparece como "Python". Somamos esses arquivos pela árvore
+# (só nome e tamanho, nunca conteúdo) e juntamos ao resultado do GitHub.
+EXTRA_LANGS = {
+    ".sql": "SQL",
+    ".hdbprocedure": "SQL", ".hdbview": "SQL", ".hdbtable": "SQL",
+    ".hdbfunction": "SQL", ".hdbcalculationview": "SQL",
+}
+SKIP_DIRS = ("node_modules/", "vendor/", "dist/", "build/", ".venv/")
+
+
+def extra_language_bytes(s, repo, branch):
+    r = s.get(f"{API}/repos/{repo}/git/trees/{branch}", params={"recursive": 1}, timeout=30)
+    if r.status_code != 200:
+        return {}
+    out = {}
+    for item in r.json().get("tree", []):
+        path = item.get("path", "")
+        if item.get("type") != "blob" or any(d in path for d in SKIP_DIRS):
+            continue
+        ext = os.path.splitext(path)[1].lower()
+        if ext in EXTRA_LANGS:
+            out[EXTRA_LANGS[ext]] = out.get(EXTRA_LANGS[ext], 0) + item.get("size", 0)
+    return out
+
 
 def session():
     s = requests.Session()
@@ -53,6 +78,8 @@ def collect(s, repo, now):
     meta = r.json()
 
     langs = s.get(f"{API}/repos/{repo}/languages", timeout=30).json()
+    for lang, size in extra_language_bytes(s, repo, meta["default_branch"]).items():
+        langs[lang] = max(langs.get(lang, 0), size)   # max: se o GitHub já contou, não soma 2x
     total = sum(langs.values()) or 1
     top = max(langs, key=langs.get) if langs else None
 
