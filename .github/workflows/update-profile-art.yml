@@ -1,0 +1,85 @@
+name: Update profile art
+
+# Atualiza heatmap + card hdbsql todo dia a partir de dados reais.
+# O retrato ASCII só é (re)gerado quando:
+#   - ainda não existe assets/portrait.svg, ou
+#   - você roda manualmente marcando "portrait", ou
+#   - você troca assets/source-photo.png
+# Motivo: rembg baixa um modelo de ~170 MB; não faz sentido no cron diário.
+
+"on":
+  schedule:
+    - cron: "17 9 * * *"   # 09:17 UTC = 06:17 em Brasília
+  workflow_dispatch:
+    inputs:
+      portrait:
+        description: "Regerar o retrato ASCII"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - "assets/source-photo.png"
+      - ".github/workflows/update-profile-art.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-art
+  cancel-in-progress: false
+
+jobs:
+  art:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Precisa gerar o retrato?
+        id: need
+        run: |
+          if [ ! -f assets/portrait.svg ] \
+             || [ "${{ inputs.portrait }}" = "true" ] \
+             || git diff --name-only HEAD~1 HEAD 2>/dev/null | grep -q '^assets/source-photo.png$'; then
+            echo "portrait=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Retrato ASCII (rembg + CLAHE)
+        if: steps.need.outputs.portrait == 'true'
+        run: |
+          pip install -r scripts/requirements-portrait.txt
+          python scripts/prep_photo.py
+          python scripts/make_ascii_svg.py
+
+      - name: Coletar contribuições (sem token)
+        run: |
+          pip install -r scripts/requirements.txt
+          python scripts/fetch_contributions.py
+
+      # Repos privados exigem o secret PROFILE_READ_TOKEN (fine-grained, SOMENTE
+      # LEITURA, só nos repos de config.PROJECTS). Sem ele, cai no GITHUB_TOKEN:
+      # os públicos funcionam e os privados reaproveitam o último dado bom.
+      - name: Coletar projetos (API do GitHub)
+        env:
+          GH_TOKEN: ${{ secrets.PROFILE_READ_TOKEN || secrets.GITHUB_TOKEN }}
+        run: python scripts/fetch_projects.py
+
+      - name: Renderizar heatmap, card hdbsql e projetos
+        run: |
+          python scripts/render_heatmap_svg.py
+          python scripts/make_info_card.py
+          python scripts/render_projects_svg.py
+
+      - name: Commit
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh profile art [skip ci]"
+          file_pattern: "data/contributions.json data/projects.json assets/*.svg assets/source-prepped.png"

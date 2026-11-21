@@ -1,72 +1,35 @@
-<h2 align="center">👋🏽🧑🏽‍💻 Olá, meu nome é Christian<br>Seja muito bem-vindo ao meu GitHub!</h2>
-
----
-
-## 🧑🏽‍💼 Sobre Mim
-
-Sou um profissional da área de **Tecnologia da Informação** em constante evolução, atualmente em transição de carreira para **Desenvolvedor Full-Stack**. Tenho experiência com tecnologias como **JavaScript**, **HTML**, **CSS**, **Python** e bancos de dados como **MySQL** e **SAP HANA**, realizando bloqueios, consultas e automações.  
-
-Atualmente trabalho com suporte do sistema **SAP Business One**, utilizando juntamente as ferramentas **SAP Hana** e **Crystall Reports**.
-
-Estou sempre em busca de novos desafios e oportunidades para aplicar minhas habilidades em projetos inovadores, colaborativos e que gerem valor para a sociedade.
-
----
-
-## 🧑🏻‍💻 LPs Dominantes
-
+<!--
+  Tudo aqui é SVG animado gerado por scripts/ e atualizado diariamente por
+  .github/workflows/update-profile-art.yml — sem widgets de terceiros.
+  Textos do card e cores: scripts/config.py
+  Gotchas do GitHub: style inline é removido, <h1>/<h2> ganham sublinhado,
+  nada de JS. Por isso os "prompts" são <h3> e a animação vive nos SVGs.
+-->
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=js,py,react,html,css,mysql" height="40" alt="Tecnologias" />
+
+<h3>christian@wyterlin:~$ whoami</h3>
+
+<table>
+<tr>
+<td valign="top" width="370"><img src="./assets/portrait.svg" width="370" alt="Retrato ASCII do Christian sendo digitado linha a linha" /></td>
+<td valign="top" width="490"><img src="./assets/info-card.svg" width="490" alt="Sessão hdbsql: SELECT no perfil do Christian — Analista de TI, Consultor SAP Business One certificado pela Ramo, stack HANA SQL, C#/.NET, Python e JavaScript" /></td>
+</tr>
+</table>
+
+<h3>christian@wyterlin:~$ git log --since="1 year ago" --graph</h3>
+
+<img src="./assets/contrib-heatmap.svg" width="860" alt="Mapa de contribuições dos últimos 12 meses com sequência atual, recorde e melhor dia, atualizado diariamente" />
+
+<h3>christian@wyterlin:~$ ls -la ~/projetos</h3>
+
+<img src="./assets/projects.svg" width="860" alt="Projetos em andamento com status, linguagem principal, último push e atividade das últimas 12 semanas: AEGIS, sapb1-sql-scripts, Obscura, performance-dashboard e my-website" />
+
+<sub>Repositórios públicos: <a href="https://github.com/Wyterlin/performance-dashboard">performance-dashboard</a> · <a href="https://github.com/Wyterlin/my-website">my-website</a></sub>
+
+<h3>christian@wyterlin:~$ cat contato.txt</h3>
+
+<a href="https://www.linkedin.com/in/christian-wyterlin-silveira">linkedin</a> &nbsp;/&nbsp;
+<a href="mailto:christianwyterlin@gmail.com">email</a> &nbsp;/&nbsp;
+<a href="https://instagram.com/cwyterlins">instagram</a>
+
 </div>
-
----
-
-## 🛠 Ferramentas
-
-<div align="center">
-  <img src="https://skillicons.dev/icons?i=github,git,vscode,postman" height="40" alt="Ferramentas" />
-</div>
-
----
-
-
-## 🧊 Contribuições em 3D
-
-![Status](./profile-3d-contrib/profile-night-green.svg)
-
-
----
-
-## 🔥 Contribuições Diárias
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=Wyterlin&theme=dracula&hide_border=true" alt="Contribuição contínua" />
-</div>
-
----
-
-## 📊 Estatísticas do GitHub
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Wyterlin&show_icons=true&theme=dracula&locale=pt-br&hide_border=true" height="150" alt="Estatísticas do GitHub" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Wyterlin&layout=compact&theme=dracula&hide_border=true" height="150" alt="Linguagens Mais Utilizadas" />
-</div>
-
----
-
-## 🏆 Troféus do GitHub
-
-<p align="center">
-  <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img src="https://github-profile-trophy.vercel.app/?username=Wyterlin&theme=dracula&margin-w=10&no-frame=true" alt="Trophy" />
-  </a>
-</p>
-
----
-
-## 🐍 Snake Animation
-
-<div align="center">
-  <img src="https://profile-readme-generator.com/assets/snake.svg" alt="Snake animation" width="100%" />
-</div>
-
----
