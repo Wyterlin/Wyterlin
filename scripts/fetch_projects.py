@@ -59,6 +59,7 @@ def collect(s, repo, now):
     since = (now - dt.timedelta(weeks=WEEKS)).strftime("%Y-%m-%dT%H:%M:%SZ")
     weekly = [0] * WEEKS
     n30 = 0
+    capped = False
     for page in (1, 2, 3):
         c = s.get(f"{API}/repos/{repo}/commits", params={"since": since, "per_page": 100, "page": page}, timeout=30)
         if c.status_code == 409:          # repo vazio
@@ -71,13 +72,15 @@ def collect(s, repo, now):
             n30 += age < 30
         if len(items) < 100:
             break
+    else:
+        capped = True          # 3 páginas cheias: há mais commits que o limite lido
 
     pushed = parse(meta["pushed_at"])
     days = (now - pushed).days
     return {"repo": repo, "private": meta["private"], "archived": meta["archived"],
             "pushed_at": meta["pushed_at"], "days_since_push": days,
             "language": top, "lang_pct": round(100 * langs[top] / total) if top else 0,
-            "commits_30d": n30, "weekly": weekly,
+            "commits_30d": n30, "commits_capped": capped, "weekly": weekly,
             "status": "idle" if meta["archived"] else status_for(days), "ok": True}
 
 

@@ -98,7 +98,7 @@ def main():
                  f'<text x="{X_NAME}" y="{top + 34}" fill="{t["muted"]}" font-size="11">{escape(p["desc"])}</text>'
                  f'{lang_svg}'
                  f'<text x="{X_PUSH}" y="{top + 16}" fill="{t["fg"]}">{ago(p.get("days_since_push"))}</text>'
-                 f'<text x="{X_N}" y="{top + 16}" fill="{t["accent2"] if p.get("commits_30d") else t["muted"]}" text-anchor="end" font-weight="700">{p.get("commits_30d", 0)}</text>'
+                 f'<text x="{X_N}" y="{top + 16}" fill="{t["accent2"] if p.get("commits_30d") else t["muted"]}" text-anchor="end" font-weight="700">{p.get("commits_30d", 0)}{"+" if p.get("commits_capped") else ""}</text>'
                  f'</g>' + "".join(bars) +
                  f'<line x1="{PAD}" x2="{W - PAD}" y1="{top + ROW - 3}" y2="{top + ROW - 3}" stroke="{t["border"]}" opacity=".5"/>')
 
