@@ -61,9 +61,9 @@ def main():
     gray = np.asarray(rgba.convert("L"))
     gray = local_contrast(gray).astype(np.float32)
     out = gray * alpha                       # fundo => preto (0)
-    # Enquadra o ROSTO, não o busto. Bbox do sujeito inteiro inclui ombros e a
-    # cabeça vira ~28% da largura => ASCII ilegível. Mede a largura da cabeça
-    # nas linhas do topo (onde só há cabelo/rosto) e corta ombros/camiseta.
+    # Enquadra a partir da CABEÇA. O bbox do sujeito inteiro estica até os
+    # ombros e a cabeça vira ~28% da largura. Mede a cabeça nas linhas do topo
+    # e monta o recorte em volta dela (busto ou só rosto, ver config).
     solid = (alpha > 0.5).astype(np.uint8)
     # só o maior objeto: o rembg às vezes deixa manchas soltas (reflexo, objeto
     # no fundo) e elas inflariam a medida da largura da cabeça.
@@ -87,10 +87,18 @@ def main():
         head_w = int(np.percentile(widths[widths > 0], 90) * 1.08)
         cx = int(np.median([np.where(r)[0].mean() for r in rows if r.any()]))
         bx = np.array([cx - head_w // 2, cx + head_w // 2])
+        # A proporção do recorte segue a área útil do cartão (~1.31 alt/larg),
+        # assim a arte enche o cartão sem distorcer nem sobrar faixa vazia.
         pad = int(0.07 * head_w)
-        x0, x1 = max(bx.min() - pad, 0), min(bx.max() + pad, out.shape[1])
         y0 = max(top - pad, 0)
-        y1 = min(int(top + head_w * float(os.environ.get("PORTRAIT_HEIGHT_RATIO", 1.32))), out.shape[0])
+        if config.PORTRAIT_FRAME == "bust":
+            crop_w = int(head_w * config.PORTRAIT_BUST_HEADS)
+        else:
+            crop_w = head_w + 2 * pad
+        crop_h = int(crop_w * 1.31)
+        x0 = max(cx - crop_w // 2, 0)
+        x1 = min(x0 + crop_w, out.shape[1])
+        y1 = min(y0 + crop_h, out.shape[0])
         out = out[y0:y1, x0:x1]
     os.makedirs(config.ASSETS, exist_ok=True)
     Image.fromarray(out.clip(0, 255).astype(np.uint8)).save(config.PHOTO_PREPPED)

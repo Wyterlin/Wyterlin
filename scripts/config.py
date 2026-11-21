@@ -44,6 +44,12 @@ THEME = {
 # Se mudar a qtde de linhas do INFO_ROWS, ajuste aqui (≈ altura_info*490/520/370).
 PORTRAIT_ASPECT = 1.34
 
+# Enquadramento do retrato ASCII:
+#   "bust" = cabeça + ombros (largura = PORTRAIT_BUST_HEADS × largura da cabeça)
+#   "face" = só o rosto
+PORTRAIT_FRAME = "bust"
+PORTRAIT_BUST_HEADS = 2.1
+
 FONT_MONO = "'JetBrains Mono','Cascadia Code',Consolas,'SFMono-Regular',Menlo,'Courier New',monospace"
 
 # ── Card neofetch ───────────────────────────────────────────────────────────
