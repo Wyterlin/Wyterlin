@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T02:39:27Z",
+ "generated_at": "2026-11-21T02:42:49Z",
  "projects": [
   {
    "repo": "Wyterlin/aegis",
@@ -36,8 +36,8 @@
    "archived": false,
    "pushed_at": "2026-10-08T19:11:31Z",
    "days_since_push": 43,
-   "language": "Python",
-   "lang_pct": 81,
+   "language": "SQL",
+   "lang_pct": 68,
    "commits_30d": 0,
    "commits_capped": false,
    "weekly": [
@@ -95,7 +95,7 @@
    "pushed_at": "2026-07-20T03:39:15Z",
    "days_since_push": 123,
    "language": "JavaScript",
-   "lang_pct": 80,
+   "lang_pct": 75,
    "commits_30d": 0,
    "commits_capped": false,
    "weekly": [
