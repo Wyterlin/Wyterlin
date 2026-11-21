@@ -43,7 +43,8 @@ def main():
         data = json.load(f)
     projects = data["projects"]
     t = config.THEME
-    status_color = {"active": "#28c840", "paused": t["accent2"], "idle": t["muted"]}
+    # "unknown" = sem token p/ repo privado e sem dado anterior: cinza vazado, nunca "inativo"
+    status_color = {"active": "#28c840", "paused": t["accent2"], "idle": t["muted"], "unknown": t["border"]}
     H = BAR + HEAD_H + ROW * len(projects) + FOOT + PAD // 2
     o = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{config.FONT_MONO}" font-size="12">',
          "<style>"
@@ -90,7 +91,7 @@ def main():
                     f'<text x="{X_LANG + 15}" y="{top + 16}" fill="{t["fg"]}">{escape(lang)} <tspan fill="{t["muted"]}">{p["lang_pct"]}%</tspan></text>'
                     if lang else f'<text x="{X_LANG}" y="{top + 16}" fill="{t["muted"]}">—</text>')
         o.append(f'<g class="r"{d}>'
-                 f'<circle{pulse} cx="{PAD + 5}" cy="{top + 12}" r="4.5" fill="{status_color[st]}"/>'
+                 f'<circle{pulse} cx="{PAD + 5}" cy="{top + 12}" r="4.5" fill="{status_color.get(st, t["muted"])}" stroke="{t["muted"] if st == "unknown" else "none"}"/>'
                  f'<text x="{X_NAME}" y="{top + 16}" fill="{t["accent"]}" font-weight="700" font-size="13">{name}</text>'
                  f'<rect x="{tag_x:.1f}" y="{top + 5}" width="{len(tag) * 6.2 + 10:.1f}" height="15" rx="7.5" fill="none" stroke="{t["border"]}"/>'
                  f'<text x="{tag_x + 5:.1f}" y="{top + 16}" font-size="9.5" fill="{t["muted"]}">{tag}</text>'
