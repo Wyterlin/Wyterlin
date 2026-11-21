@@ -20,16 +20,11 @@
 
 <img src="./assets/contrib-heatmap.svg" width="860" alt="Mapa de contribuições dos últimos 12 meses com sequência atual, recorde e melhor dia, atualizado diariamente" />
 
-<h3>christian@wyterlin:~$ ls ~/projetos</h3>
+<h3>christian@wyterlin:~$ ls -la ~/projetos</h3>
 
-<table>
-<tr><th align="left">Projeto</th><th align="left">O que é</th><th align="left">Stack</th><th align="left">Status</th></tr>
-<tr><td><b>AEGIS</b></td><td>Assistente de IA pessoal estilo JARVIS: memória persistente, tools modulares, rotinas automáticas</td><td>Python · LLM</td><td>🟢 em construção</td></tr>
-<tr><td><b>sapb1-sql-scripts</b></td><td>Biblioteca de queries, TransactionNotification e procedures para SAP B1 on HANA</td><td>HANA SQL</td><td>🔧 refatorando</td></tr>
-<tr><td><b>Obscura</b></td><td>Cofre de senhas com foco em segurança</td><td>Web · Crypto</td><td>🟡 pausado</td></tr>
-<tr><td><a href="https://github.com/Wyterlin/performance-dashboard"><b>performance-dashboard</b></a></td><td>Dashboard de performance</td><td>Web</td><td>✅ público</td></tr>
-<tr><td><a href="https://github.com/Wyterlin/my-website"><b>my-website</b></a></td><td>Portfólio pessoal</td><td>HTML · CSS · JS</td><td>🔄 repaginando</td></tr>
-</table>
+<img src="./assets/projects.svg" width="860" alt="Projetos em andamento com status, linguagem principal, último push e atividade das últimas 12 semanas: AEGIS, sapb1-sql-scripts, Obscura, performance-dashboard e my-website" />
+
+<sub>Repositórios públicos: <a href="https://github.com/Wyterlin/performance-dashboard">performance-dashboard</a> · <a href="https://github.com/Wyterlin/my-website">my-website</a></sub>
 
 <h3>christian@wyterlin:~$ cat contato.txt</h3>
 

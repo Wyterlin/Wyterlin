@@ -66,6 +66,24 @@ INFO_ROWS = [
     ("Local", "Rio de Janeiro · UTC-3"),
 ]
 
+# ── Vitrine de projetos ─────────────────────────────────────────────────────
+# MANUAL de propósito: só entra aqui o que você decidir mostrar. Um repo
+# privado novo nunca aparece no perfil público por acidente.
+# Dados (último push, linguagem, commits) vêm da API; descrição é sua.
+# Descrições: máx. ~60 caracteres (coluna do SVG).
+PROJECTS = [
+    {"repo": "Wyterlin/aegis", "desc": "IA pessoal estilo JARVIS: memória e tools modulares"},
+    {"repo": "Wyterlin/sapb1-sql-scripts", "desc": "Queries, TransactionNotification e procedures p/ SAP B1"},
+    {"repo": "Wyterlin/obscura", "desc": "Cofre de senhas com foco em segurança"},
+    {"repo": "Wyterlin/performance-dashboard", "desc": "Dashboard de performance"},
+    {"repo": "Wyterlin/my-website", "desc": "Portfólio pessoal"},
+]
+# Status por inatividade (dias desde o último push)
+STATUS_ACTIVE_DAYS = 14
+STATUS_PAUSED_DAYS = 90
+PROJECTS_JSON = os.path.join(DATA, "projects.json")
+PROJECTS_SVG = os.path.join(ASSETS, "projects.svg")
+
 # Meses em pt-BR para o heatmap
 MONTHS_PT = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun",
              "Jul", "Ago", "Set", "Out", "Nov", "Dez"]

@@ -61,10 +61,10 @@ def main():
          f'font-family="{config.FONT_MONO}">',
          "<style>"
          f".l{{fill:{t['muted']};font-size:11px}}"
-         ".c{opacity:0;animation:in .5s cubic-bezier(.2,.7,.3,1.2) forwards}"
-         "@keyframes in{from{opacity:0;transform:translate(-10px,-10px)}to{opacity:1;transform:none}}"
-         "@media (prefers-reduced-motion:reduce){.c{opacity:1;animation:none}}"
-         + (".c{opacity:1;animation:none}" if STATIC else "")
+         ".c{animation:in .5s cubic-bezier(.2,.7,.3,1.2) backwards}"   # base visível; anima só no delay
+         "@keyframes in{from{opacity:0;transform:translate(-10px,-10px)}}"
+         "@media (prefers-reduced-motion:reduce){.c{animation:none}}"
+         + (".c{animation:none}" if STATIC else "")
          + "</style>",
          f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="10" fill="{t["panel"]}" stroke="{t["border"]}"/>',
          f'<path d="M.5 10.5a10 10 0 0 1 10-10h{W - 21}a10 10 0 0 1 10 10V{BAR}H.5z" fill="{t["titlebar"]}"/>',
