@@ -388,8 +388,8 @@
 <rect class="c" x="888" y="104" width="13" height="13" rx="3" fill="#11615a" style="animation-delay:0.972s"><title>34 contribuição(ões) em 17 Nov</title></rect>
 <rect class="c" x="888" y="120" width="13" height="13" rx="3" fill="#0f3d3a" style="animation-delay:0.990s"><title>13 contribuição(ões) em 18 Nov</title></rect>
 <rect class="c" x="888" y="136" width="13" height="13" rx="3" fill="#0f3d3a" style="animation-delay:1.008s"><title>1 contribuição(ões) em 19 Nov</title></rect>
-<rect class="c" x="888" y="152" width="13" height="13" rx="3" fill="#0f3d3a" style="animation-delay:1.026s"><title>18 contribuição(ões) em 20 Nov</title></rect>
-<rect class="c" x="888" y="168" width="13" height="13" rx="3" fill="#0f3d3a" style="animation-delay:1.044s"><title>3 contribuição(ões) em 21 Nov</title></rect>
+<rect class="c" x="888" y="152" width="13" height="13" rx="3" fill="#0f3d3a" style="animation-delay:1.026s"><title>20 contribuição(ões) em 20 Nov</title></rect>
+<rect class="c" x="888" y="168" width="13" height="13" rx="3" fill="#0f3d3a" style="animation-delay:1.044s"><title>4 contribuição(ões) em 21 Nov</title></rect>
 <text class="l" x="735" y="202">menos</text>
 <rect x="777" y="192" width="13" height="13" rx="3" fill="#151e29"/>
 <rect x="793" y="192" width="13" height="13" rx="3" fill="#0f3d3a"/>
@@ -399,7 +399,7 @@
 <rect x="857" y="192" width="13" height="13" rx="3" fill="#5eead4"/>
 <text class="l" x="877" y="202">mais</text>
 <text class="l" x="56" y="202">atualizado em 2026-11-21 via GitHub Actions</text>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.40s" dur=".5s" fill="freeze"/><rect x="22.0" y="218" width="167.8" height="64" rx="8" fill="#0b0f14" stroke="#1f2a37"/><rect x="22.0" y="232" width="3" height="36" rx="1.5" fill="#2dd4bf"/><text x="38.0" y="249" font-size="20" font-weight="700" fill="#d6e2ee">2518</text><text x="38.0" y="268" font-size="11" fill="#6b7b8c">contribuições no ano</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.40s" dur=".5s" fill="freeze"/><rect x="22.0" y="218" width="167.8" height="64" rx="8" fill="#0b0f14" stroke="#1f2a37"/><rect x="22.0" y="232" width="3" height="36" rx="1.5" fill="#2dd4bf"/><text x="38.0" y="249" font-size="20" font-weight="700" fill="#d6e2ee">2521</text><text x="38.0" y="268" font-size="11" fill="#6b7b8c">contribuições no ano</text></g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.52s" dur=".5s" fill="freeze"/><rect x="199.8" y="218" width="167.8" height="64" rx="8" fill="#0b0f14" stroke="#1f2a37"/><rect x="199.8" y="232" width="3" height="36" rx="1.5" fill="#f5b942"/><text x="215.8" y="249" font-size="20" font-weight="700" fill="#d6e2ee">24d</text><text x="215.8" y="268" font-size="11" fill="#6b7b8c">sequência atual</text></g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.64s" dur=".5s" fill="freeze"/><rect x="377.6" y="218" width="167.8" height="64" rx="8" fill="#0b0f14" stroke="#1f2a37"/><rect x="377.6" y="232" width="3" height="36" rx="1.5" fill="#2dd4bf"/><text x="393.6" y="249" font-size="20" font-weight="700" fill="#d6e2ee">33d</text><text x="393.6" y="268" font-size="11" fill="#6b7b8c">maior sequência</text></g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.76s" dur=".5s" fill="freeze"/><rect x="555.4" y="218" width="167.8" height="64" rx="8" fill="#0b0f14" stroke="#1f2a37"/><rect x="555.4" y="232" width="3" height="36" rx="1.5" fill="#2dd4bf"/><text x="571.4" y="249" font-size="20" font-weight="700" fill="#d6e2ee">90</text><text x="571.4" y="268" font-size="11" fill="#6b7b8c">melhor dia · 17 Out</text></g>
