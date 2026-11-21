@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T02:32:07Z",
+ "generated_at": "2026-11-21T02:32:54Z",
  "projects": [
   {
    "repo": "Wyterlin/aegis",
@@ -18,7 +18,7 @@
     0,
     0
    ],
-   "status": "idle",
+   "status": "unknown",
    "commits_30d": 0,
    "ok": false,
    "desc": "IA pessoal estilo JARVIS: mem\u00f3ria e tools modulares",
@@ -41,7 +41,7 @@
     0,
     0
    ],
-   "status": "idle",
+   "status": "unknown",
    "commits_30d": 0,
    "ok": false,
    "desc": "Queries, TransactionNotification e procedures p/ SAP B1",
@@ -64,7 +64,7 @@
     0,
     0
    ],
-   "status": "idle",
+   "status": "unknown",
    "commits_30d": 0,
    "ok": false,
    "desc": "Cofre de senhas com foco em seguran\u00e7a",
