@@ -89,6 +89,15 @@ def main():
     except (OSError, ValueError, KeyError):
         old = {}
     s = session()
+    # Diagnóstico de credencial (nunca imprime nada do token): um PAT responde
+    # /user com o login; o GITHUB_TOKEN do Actions recebe 403.
+    if TOKEN:
+        u = s.get(f"{API}/user", timeout=30)
+        kind = {200: "PAT", 403: "GITHUB_TOKEN (fallback)"}.get(u.status_code, f"HTTP {u.status_code}")
+        who = u.json().get("login", "—") if u.status_code == 200 else "—"
+        print(f"credencial: {kind} · login {who} · expira {u.headers.get('github-authentication-token-expiration', '—')}")
+    else:
+        print("credencial: nenhuma (só repos públicos)")
     out, failed = [], 0
     for p in config.PROJECTS:
         try:
