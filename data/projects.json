@@ -1,9 +1,15 @@
 {
- "generated_at": "2026-11-21T02:32:54Z",
+ "generated_at": "2026-11-21T02:38:22Z",
  "projects": [
   {
    "repo": "Wyterlin/aegis",
    "private": true,
+   "archived": false,
+   "pushed_at": "2026-11-21T02:26:55Z",
+   "days_since_push": 0,
+   "language": "TypeScript",
+   "lang_pct": 43,
+   "commits_30d": 300,
    "weekly": [
     0,
     0,
@@ -15,25 +21,30 @@
     0,
     0,
     0,
-    0,
-    0
+    158,
+    142
    ],
-   "status": "unknown",
-   "commits_30d": 0,
-   "ok": false,
+   "status": "active",
+   "ok": true,
    "desc": "IA pessoal estilo JARVIS: mem\u00f3ria e tools modulares",
    "name": "aegis"
   },
   {
    "repo": "Wyterlin/sapb1-sql-scripts",
    "private": true,
+   "archived": false,
+   "pushed_at": "2026-10-08T19:11:31Z",
+   "days_since_push": 43,
+   "language": "Python",
+   "lang_pct": 81,
+   "commits_30d": 0,
    "weekly": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    3,
+    3,
+    3,
+    9,
+    12,
+    2,
     0,
     0,
     0,
@@ -41,15 +52,20 @@
     0,
     0
    ],
-   "status": "unknown",
-   "commits_30d": 0,
-   "ok": false,
+   "status": "paused",
+   "ok": true,
    "desc": "Queries, TransactionNotification e procedures p/ SAP B1",
    "name": "sapb1-sql-scripts"
   },
   {
    "repo": "Wyterlin/obscura",
    "private": true,
+   "archived": false,
+   "pushed_at": "2026-04-11T23:03:35Z",
+   "days_since_push": 223,
+   "language": "TypeScript",
+   "lang_pct": 62,
+   "commits_30d": 0,
    "weekly": [
     0,
     0,
@@ -64,9 +80,8 @@
     0,
     0
    ],
-   "status": "unknown",
-   "commits_30d": 0,
-   "ok": false,
+   "status": "idle",
+   "ok": true,
    "desc": "Cofre de senhas com foco em seguran\u00e7a",
    "name": "obscura"
   },
