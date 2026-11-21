@@ -11,7 +11,7 @@
 
 <table>
 <tr>
-<td valign="top" width="370"><img src="./assets/portrait.svg" width="370" alt="Retrato ASCII do Christian sendo digitado linha a linha" /></td>
+<td valign="top" width="370"><img src="./assets/portrait.svg?v=4" width="370" alt="Retrato ASCII do Christian sendo digitado linha a linha" /></td>
 <td valign="top" width="490"><img src="./assets/info-card.svg" width="490" alt="Sessão hdbsql: SELECT no perfil do Christian — Analista de TI, Consultor SAP Business One certificado pela Ramo, stack HANA SQL, C#/.NET, Python e JavaScript" /></td>
 </tr>
 </table>
