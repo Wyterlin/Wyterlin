@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-21T02:42:49Z",
+ "generated_at": "2026-11-21T16:46:41Z",
  "projects": [
   {
    "repo": "Wyterlin/aegis",
    "private": true,
    "archived": false,
-   "pushed_at": "2026-11-21T02:26:55Z",
+   "pushed_at": "2026-11-21T16:38:49Z",
    "days_since_push": 0,
    "language": "TypeScript",
-   "lang_pct": 43,
+   "lang_pct": 46,
    "commits_30d": 300,
    "commits_capped": true,
    "weekly": [
@@ -22,8 +22,8 @@
     0,
     0,
     0,
-    158,
-    142
+    0,
+    300
    ],
    "status": "active",
    "ok": true,
@@ -34,27 +34,27 @@
    "repo": "Wyterlin/sapb1-sql-scripts",
    "private": true,
    "archived": false,
-   "pushed_at": "2026-10-08T19:11:31Z",
-   "days_since_push": 43,
+   "pushed_at": "2026-11-21T02:49:59Z",
+   "days_since_push": 0,
    "language": "SQL",
    "lang_pct": 68,
-   "commits_30d": 0,
+   "commits_30d": 2,
    "commits_capped": false,
    "weekly": [
     3,
     3,
     3,
-    9,
-    12,
+    10,
+    11,
     2,
     0,
     0,
     0,
     0,
     0,
-    0
+    2
    ],
-   "status": "paused",
+   "status": "active",
    "ok": true,
    "desc": "Queries, TransactionNotification e procedures p/ SAP B1",
    "name": "sapb1-sql-scripts"
@@ -84,7 +84,7 @@
     0
    ],
    "status": "idle",
-   "ok": true,
+   "ok": false,
    "desc": "Cofre de senhas com foco em seguran\u00e7a",
    "name": "obscura"
   },
@@ -93,7 +93,7 @@
    "private": false,
    "archived": false,
    "pushed_at": "2026-07-20T03:39:15Z",
-   "days_since_push": 123,
+   "days_since_push": 124,
    "language": "JavaScript",
    "lang_pct": 75,
    "commits_30d": 0,
@@ -121,11 +121,11 @@
    "repo": "Wyterlin/my-website",
    "private": false,
    "archived": false,
-   "pushed_at": "2026-04-19T00:07:49Z",
-   "days_since_push": 216,
+   "pushed_at": "2026-11-21T03:28:39Z",
+   "days_since_push": 0,
    "language": "HTML",
-   "lang_pct": 97,
-   "commits_30d": 0,
+   "lang_pct": 62,
+   "commits_30d": 1,
    "commits_capped": false,
    "weekly": [
     0,
@@ -139,9 +139,9 @@
     0,
     0,
     0,
-    0
+    1
    ],
-   "status": "idle",
+   "status": "active",
    "ok": true,
    "desc": "Portf\u00f3lio pessoal",
    "name": "my-website"
