@@ -45,7 +45,7 @@ def to_ascii(path: str):
     # realça olhos, sobrancelhas e boca, que é o que faz o rosto ser reconhecível.
     gamma = float(os.environ.get("ASCII_GAMMA", 0.85))
     blur = cv2.GaussianBlur(small, (0, 0), 1.1)
-    small = np.clip(small + float(os.environ.get("ASCII_SHARP", 2.0)) * (small - blur), 0, 1)
+    small = np.clip(small + float(os.environ.get("ASCII_SHARP", 0.0)) * (small - blur), 0, 1)
     lo, hi = np.percentile(small, (3, 97))     # stretch: usa a rampa inteira
     small = np.clip((small - lo) / max(hi - lo, 1e-6), 0, 1) ** gamma
     idx = (small * (len(RAMP) - 1)).round().astype(int)
