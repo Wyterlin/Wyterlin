@@ -99,7 +99,7 @@ def main():
             print(f"! {p['repo']}: {code} — mantendo último dado" if p["repo"] in old
                   else f"! {p['repo']}: {code} — sem dados", file=sys.stderr)
             d = {**old.get(p["repo"], {"repo": p["repo"], "private": True, "weekly": [0] * WEEKS,
-                                       "status": "idle", "commits_30d": 0}), "ok": False}
+                                       "status": "unknown", "commits_30d": 0}), "ok": False}
         out.append({**d, "desc": p["desc"], "name": p["repo"].split("/")[1]})
     os.makedirs(config.DATA, exist_ok=True)
     with open(config.PROJECTS_JSON, "w", encoding="utf-8") as f:

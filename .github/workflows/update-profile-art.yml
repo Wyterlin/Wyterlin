@@ -4,7 +4,7 @@ name: Update profile art
 # O retrato ASCII só é (re)gerado quando:
 #   - ainda não existe assets/portrait.svg, ou
 #   - você roda manualmente marcando "portrait", ou
-#   - você troca assets/source-photo.png
+#   - você troca assets/source-photo.png ou altera os scripts do retrato
 # Motivo: rembg baixa um modelo de ~170 MB; não faz sentido no cron diário.
 
 "on":
@@ -48,7 +48,7 @@ jobs:
         run: |
           if [ ! -f assets/portrait.svg ] \
              || [ "${{ inputs.portrait }}" = "true" ] \
-             || git diff --name-only HEAD~1 HEAD 2>/dev/null | grep -q '^assets/source-photo.png$'; then
+             || git diff --name-only HEAD~1 HEAD 2>/dev/null | grep -qE '^(assets/source-photo\.png|scripts/(prep_photo|make_ascii_svg|config)\.py)$'; then
             echo "portrait=true" >> "$GITHUB_OUTPUT"
           fi
 

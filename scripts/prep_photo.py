@@ -61,12 +61,36 @@ def main():
     gray = np.asarray(rgba.convert("L"))
     gray = local_contrast(gray).astype(np.float32)
     out = gray * alpha                       # fundo => preto (0)
-    # recorta a caixa útil (onde há sujeito) com folga de 4%
-    ys, xs = np.where(alpha > 0.1)
+    # Enquadra o ROSTO, não o busto. Bbox do sujeito inteiro inclui ombros e a
+    # cabeça vira ~28% da largura => ASCII ilegível. Mede a largura da cabeça
+    # nas linhas do topo (onde só há cabelo/rosto) e corta ombros/camiseta.
+    solid = (alpha > 0.5).astype(np.uint8)
+    # só o maior objeto: o rembg às vezes deixa manchas soltas (reflexo, objeto
+    # no fundo) e elas inflariam a medida da largura da cabeça.
+    try:
+        import cv2
+        n, lab, st, _ = cv2.connectedComponentsWithStats(solid)
+        if n > 2:
+            solid = (lab == 1 + np.argmax(st[1:, cv2.CC_STAT_AREA])).astype(np.uint8)
+    except ImportError:
+        pass
+    solid = solid.astype(bool)
+    ys, xs = np.where(solid)
     if len(xs):
-        pad = int(0.04 * max(out.shape))
-        y0, y1 = max(ys.min() - pad, 0), min(ys.max() + pad, out.shape[0])
-        x0, x1 = max(xs.min() - pad, 0), min(xs.max() + pad, out.shape[1])
+        top, bottom = ys.min(), ys.max()
+        # Largura da cabeça = percentil 90 das larguras nas 40% de cima do sujeito.
+        # Em busto (cabeça ~40% da altura) pega só cabeça+orelhas; em rosto
+        # fechado (cabeça ~85%) pega a testa/cabelo. Medir mais fundo que isso
+        # incluiria os ombros e encolheria o rosto de novo.
+        rows = solid[top: top + max(int((bottom - top) * 0.40), 8)]
+        widths = rows.sum(axis=1)
+        head_w = int(np.percentile(widths[widths > 0], 90) * 1.08)
+        cx = int(np.median([np.where(r)[0].mean() for r in rows if r.any()]))
+        bx = np.array([cx - head_w // 2, cx + head_w // 2])
+        pad = int(0.07 * head_w)
+        x0, x1 = max(bx.min() - pad, 0), min(bx.max() + pad, out.shape[1])
+        y0 = max(top - pad, 0)
+        y1 = min(int(top + head_w * float(os.environ.get("PORTRAIT_HEIGHT_RATIO", 1.32))), out.shape[0])
         out = out[y0:y1, x0:x1]
     os.makedirs(config.ASSETS, exist_ok=True)
     Image.fromarray(out.clip(0, 255).astype(np.uint8)).save(config.PHOTO_PREPPED)

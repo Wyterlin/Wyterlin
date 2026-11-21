@@ -17,6 +17,7 @@ import os
 import sys
 from xml.sax.saxutils import escape
 
+import cv2
 import numpy as np
 from PIL import Image
 
@@ -39,8 +40,14 @@ def to_ascii(path: str):
     w, h = img.size
     rows = max(1, int(COLS * (h / w) * (CHAR_W / CHAR_H)))
     small = np.asarray(img.resize((COLS, rows), Image.LANCZOS), dtype=np.float32) / 255.0
-    lo, hi = np.percentile(small, (2, 98))     # stretch: usa a rampa inteira
-    small = np.clip((small - lo) / max(hi - lo, 1e-6), 0, 1) ** 0.85
+    # Foto escura sobre card escuro: sem levantar sombras o cabelo (e o contorno
+    # da cabeça) simplesmente some. Gamma < 1 clareia os tons baixos; o unsharp
+    # realça olhos, sobrancelhas e boca, que é o que faz o rosto ser reconhecível.
+    gamma = float(os.environ.get("ASCII_GAMMA", 0.85))
+    blur = cv2.GaussianBlur(small, (0, 0), 1.1)
+    small = np.clip(small + float(os.environ.get("ASCII_SHARP", 2.0)) * (small - blur), 0, 1)
+    lo, hi = np.percentile(small, (3, 97))     # stretch: usa a rampa inteira
+    small = np.clip((small - lo) / max(hi - lo, 1e-6), 0, 1) ** gamma
     idx = (small * (len(RAMP) - 1)).round().astype(int)
     lines = ["".join(RAMP[i] for i in row).rstrip() for row in idx]
     # remove linhas vazias nas pontas (sem sujeito)
