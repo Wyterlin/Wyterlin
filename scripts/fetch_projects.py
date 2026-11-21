@@ -98,8 +98,12 @@ def main():
             code = getattr(e.response, "status_code", "erro")
             print(f"! {p['repo']}: {code} — mantendo último dado" if p["repo"] in old
                   else f"! {p['repo']}: {code} — sem dados", file=sys.stderr)
-            d = {**old.get(p["repo"], {"repo": p["repo"], "private": True, "weekly": [0] * WEEKS,
-                                       "status": "unknown", "commits_30d": 0}), "ok": False}
+            if code == 404 and TOKEN:
+                print(f"  dica: o token não enxerga {p['repo']} — inclua o repo em 'Repository access' "
+                      "do fine-grained token (Metadata + Contents: Read)", file=sys.stderr)
+            prev = old.get(p["repo"], {"repo": p["repo"], "private": True, "weekly": [0] * WEEKS, "commits_30d": 0})
+            # sem dado novo: só mantém o status antigo se ele veio de uma leitura bem-sucedida
+            d = {**prev, "ok": False, "status": prev.get("status") if prev.get("ok") else "unknown"}
         out.append({**d, "desc": p["desc"], "name": p["repo"].split("/")[1]})
     os.makedirs(config.DATA, exist_ok=True)
     with open(config.PROJECTS_JSON, "w", encoding="utf-8") as f:
