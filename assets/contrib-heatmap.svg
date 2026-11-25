@@ -385,7 +385,8 @@
 <rect class="c" x="872" y="168" width="13" height="13" rx="3" fill="#1fb5a3" style="animation-delay:1.026s"><title>229 contribuição(ões) em 21 Nov</title></rect>
 <rect class="c" x="888" y="72" width="13" height="13" rx="3" fill="#5eead4" style="animation-delay:0.936s"><title>260 contribuição(ões) em 22 Nov</title></rect>
 <rect class="c" x="888" y="88" width="13" height="13" rx="3" fill="#0f3d3a" style="animation-delay:0.954s"><title>25 contribuição(ões) em 23 Nov</title></rect>
-<rect class="c" x="888" y="104" width="13" height="13" rx="3" fill="#151e29" style="animation-delay:0.972s"><title>0 contribuição(ões) em 24 Nov</title></rect>
+<rect class="c" x="888" y="104" width="13" height="13" rx="3" fill="#0f3d3a" style="animation-delay:0.972s"><title>1 contribuição(ões) em 24 Nov</title></rect>
+<rect class="c" x="888" y="120" width="13" height="13" rx="3" fill="#151e29" style="animation-delay:0.990s"><title>0 contribuição(ões) em 25 Nov</title></rect>
 <text class="l" x="735" y="202">menos</text>
 <rect x="777" y="192" width="13" height="13" rx="3" fill="#151e29"/>
 <rect x="793" y="192" width="13" height="13" rx="3" fill="#0f3d3a"/>
@@ -394,9 +395,9 @@
 <rect x="841" y="192" width="13" height="13" rx="3" fill="#1fb5a3"/>
 <rect x="857" y="192" width="13" height="13" rx="3" fill="#5eead4"/>
 <text class="l" x="877" y="202">mais</text>
-<text class="l" x="56" y="202">atualizado em 2026-11-24 via GitHub Actions</text>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.40s" dur=".5s" fill="freeze"/><rect x="22.0" y="218" width="167.8" height="64" rx="8" fill="#0b0f14" stroke="#1f2a37"/><rect x="22.0" y="232" width="3" height="36" rx="1.5" fill="#2dd4bf"/><text x="38.0" y="249" font-size="20" font-weight="700" fill="#d6e2ee">3378</text><text x="38.0" y="268" font-size="11" fill="#6b7b8c">contribuições no ano</text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.52s" dur=".5s" fill="freeze"/><rect x="199.8" y="218" width="167.8" height="64" rx="8" fill="#0b0f14" stroke="#1f2a37"/><rect x="199.8" y="232" width="3" height="36" rx="1.5" fill="#f5b942"/><text x="215.8" y="249" font-size="20" font-weight="700" fill="#d6e2ee">26d</text><text x="215.8" y="268" font-size="11" fill="#6b7b8c">sequência atual</text></g>
+<text class="l" x="56" y="202">atualizado em 2026-11-25 via GitHub Actions</text>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.40s" dur=".5s" fill="freeze"/><rect x="22.0" y="218" width="167.8" height="64" rx="8" fill="#0b0f14" stroke="#1f2a37"/><rect x="22.0" y="232" width="3" height="36" rx="1.5" fill="#2dd4bf"/><text x="38.0" y="249" font-size="20" font-weight="700" fill="#d6e2ee">3379</text><text x="38.0" y="268" font-size="11" fill="#6b7b8c">contribuições no ano</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.52s" dur=".5s" fill="freeze"/><rect x="199.8" y="218" width="167.8" height="64" rx="8" fill="#0b0f14" stroke="#1f2a37"/><rect x="199.8" y="232" width="3" height="36" rx="1.5" fill="#f5b942"/><text x="215.8" y="249" font-size="20" font-weight="700" fill="#d6e2ee">27d</text><text x="215.8" y="268" font-size="11" fill="#6b7b8c">sequência atual</text></g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.64s" dur=".5s" fill="freeze"/><rect x="377.6" y="218" width="167.8" height="64" rx="8" fill="#0b0f14" stroke="#1f2a37"/><rect x="377.6" y="232" width="3" height="36" rx="1.5" fill="#2dd4bf"/><text x="393.6" y="249" font-size="20" font-weight="700" fill="#d6e2ee">33d</text><text x="393.6" y="268" font-size="11" fill="#6b7b8c">maior sequência</text></g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.76s" dur=".5s" fill="freeze"/><rect x="555.4" y="218" width="167.8" height="64" rx="8" fill="#0b0f14" stroke="#1f2a37"/><rect x="555.4" y="232" width="3" height="36" rx="1.5" fill="#2dd4bf"/><text x="571.4" y="249" font-size="20" font-weight="700" fill="#d6e2ee">260</text><text x="571.4" y="268" font-size="11" fill="#6b7b8c">melhor dia · 22 Nov</text></g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.88s" dur=".5s" fill="freeze"/><rect x="733.2" y="218" width="167.8" height="64" rx="8" fill="#0b0f14" stroke="#1f2a37"/><rect x="733.2" y="232" width="3" height="36" rx="1.5" fill="#2dd4bf"/><text x="749.2" y="249" font-size="20" font-weight="700" fill="#d6e2ee">sábado</text><text x="749.2" y="268" font-size="11" fill="#6b7b8c">dia mais produtivo</text></g>
